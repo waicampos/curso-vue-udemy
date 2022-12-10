@@ -1,6 +1,12 @@
 # curso-vue-udemy
 Exercicio do Curso Vue JS 2 - O Guia Completo (incl. Vue Router &amp; Vuex) da UDEMY
 
+# Outras referências
+
+__Guia Vue:__ https://br.vuejs.org/v2/guide/
+__Jinja:__ https://jinja.palletsprojects.com/en/3.1.x/
+__Flask + VueJS:__ https://www.youtube.com/watch?v=8ULr2J-Ymlo&t=27s
+
 ---
 
 # Seção 2
@@ -28,7 +34,7 @@ __v-html:__ Permiti inserir html dentro do template HTML. O Vue ele imprimi o te
 <p v-html="nome do atributo"></p>
 ```
 
-__v-on:__ Quando ocorrer um evento ele é interceptado e a função é executada. Por padrão o evento do elemento HTML, que foi interceptado, é passado para a função. Caso uma variável seja passada é necessário adicionar como parâmetro da função o $event para receber o evento.
+__v-on:__ Você pode usar a diretiva v-on para escutar eventos do DOM e rodar algum JavaScript quando tal evento for disparado.  Quando ocorrer um evento ele é interceptado e a função é executada. Por padrão o evento do elemento HTML, que foi interceptado, é passado para a função. Caso uma variável seja passada é necessário adicionar como parâmetro da função o $event para receber o evento.
 
 ---
 

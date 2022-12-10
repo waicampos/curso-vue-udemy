@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:input="alterarTitulo">
+        <!--Com a diretiva v-once, o vue atualiza apenas uma vez
+        o html e depois para de monitorar as alterações apra atualizar
+    esse valor-->
+        <p v-once>{{titulo}}</p>
+        <!--Aqui a variável titulo é sempre atualizada-->
+        <p>{{titulo}}</p>
+        
+        <a v-bind:href="link">Google</a>
+
+        <!-- Vue não permiti a inserção de código HTML diretamente.
+        Isso dá maior segurança contra ataques maliciosos.-->
+        <p>{{linkHTML}}</p>
+        <!--Forma correta para inserir o HTML dentro do template HTML é utilizando 
+        a diretiva v-html-->
+        <p v-html="linkHTML"></p>
+
+        <hr>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Usando VueJS!',
+                link: 'http://google.com.br',
+                linkHTML: '<a href="http://google.com.br">Google</a>'
+            },
+            methods: {
+                saudacao: function() {
+                    this.titulo = 'Bom dia!'
+                    return this.titulo
+                },
+                alterarTitulo(event){
+                    this.titulo = event.target.value;
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

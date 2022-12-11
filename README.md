@@ -3,9 +3,9 @@ Exercicio do Curso Vue JS 2 - O Guia Completo (incl. Vue Router &amp; Vuex) da U
 
 # Outras referências
 
-__Guia Vue:__ https://br.vuejs.org/v2/guide/
-__Jinja:__ https://jinja.palletsprojects.com/en/3.1.x/
-__Flask + VueJS:__ https://www.youtube.com/watch?v=8ULr2J-Ymlo&t=27s
+__Guia Vue:__ https://br.vuejs.org/v2/guide/  
+__Jinja:__ https://jinja.palletsprojects.com/en/3.1.x/  
+__Flask + VueJS:__ https://www.youtube.com/watch?v=8ULr2J-Ymlo&t=27s  
 
 ---
 
@@ -19,10 +19,15 @@ __Flask + VueJS:__ https://www.youtube.com/watch?v=8ULr2J-Ymlo&t=27s
     
 
 ## Diretivas
-__v-bind:__ liga o que está dentro da instância vue com o template. Exemplo:
+__Referência:__ https://vuejs.org/api/built-in-directives.html   
+
+__v-bind:__ liga o que está dentro da instância vue com o template. Caminho único, quando atualiza o valor do template não atualiza o valor da vue instance (neste caso ver v-model).   
+Exemplo:
 ```html
 <a v-bind:href="link">Googleasdf</a> 
 ``` 
+
+__v-model:__ ao contrário do v-bind, o v-model é um caminho de duas vias. Quando o valor da vue instance é atualizado ele atualiza o template (assim como o v-bind). Além disso, caso o template for atualizado ele atualiza também a vue instance.  
 
 __v-once__: ele irá colocar atualizar apenas o valor, depois o valor não será mais alterado mesmo modificando o atributo. Mesmo que título for atualizado na instância Vue, ele não será atualizado aqui. Uma vez que ele resolve o valor, ele não vai mais ficar monitorando esse valor.
 ```
@@ -34,7 +39,7 @@ __v-html:__ Permiti inserir html dentro do template HTML. O Vue ele imprimi o te
 <p v-html="nome do atributo"></p>
 ```
 
-__v-on:__ Você pode usar a diretiva v-on para escutar eventos do DOM e rodar algum JavaScript quando tal evento for disparado.  Quando ocorrer um evento ele é interceptado e a função é executada. Por padrão o evento do elemento HTML, que foi interceptado, é passado para a função. Caso uma variável seja passada é necessário adicionar como parâmetro da função o $event para receber o evento.
+__v-on:__ Você pode usar a diretiva v-on para escutar eventos do DOM e rodar algum JavaScript quando tal evento for disparado.  Quando ocorrer um evento ele é interceptado e a função é executada. Por padrão o evento do elemento HTML, que foi interceptado, é passado para a função. Caso uma variável seja passada é necessário adicionar como parâmetro da função o $event para receber o evento.   
 
 ---
 

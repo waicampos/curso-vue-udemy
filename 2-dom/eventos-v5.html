@@ -21,6 +21,14 @@
         <p><a v-on:click.prevent="" href="https://www.google.com">Google</a></p>
         <p><a v-on:click="naoNavegar" href="https://www.google.com">Google 1</a></p>
         <p><a v-on:click.prevent="mensagemAlerta" href="https://www.google.com">Google 2</a></p>
+        <hr>
+        <p>Última tecla Pressionada: {{tecla}}</p>
+        <input type="text" v-on:keyup="teclaPressionada">
+        <!--Modificador de evento paa executar somenta quando uma determinada tecla for pressionada-->
+        <input type="text" v-on:keyup.enter.space.up="teclaEspecificaPressionada">
+
+        <input type="text" v-on:keyup.ctrl.67="teclasCombinadas">
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -31,6 +39,7 @@
                 contador: 0,
                 x: 0,
                 y: 0,
+                tecla: ''
             },
             methods: {
                 somar(passo, e) {
@@ -49,6 +58,16 @@
                 },
                 mensagemAlerta(e){
                     alert('Comportamento padrão modificado')
+                },
+                teclaPressionada(e){
+                    this.tecla = e.key
+                    console.log(e.key)
+                },
+                teclaEspecificaPressionada(e){
+                    alert('Modificador de evento para tecla específica.')
+                },
+                teclasCombinadas(e){
+                    alert('Teclas combinadas.')
                 }
             }
         });

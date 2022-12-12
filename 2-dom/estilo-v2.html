@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #app {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .c1 {
+            background-color: red;
+        }
+        .c2 {
+            background-color: green;
+        }
+        .c3 {
+            background-color: blue;
+        }
+    </style>
+    <!--Como usar o Vue para aplicar classe diretamente dentre das divs-->
+    <div id="app">
+        <div class="demo" :class="{c1: aplicarC1, c2: !aplicarC1}" @click="aplicarC1 = !aplicarC1"></div>
+        <div class="demo" :class="estilo2"  @click="aplicarC2 = !aplicarC2"></div>
+        <div class="demo"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarC1: false, 
+                aplicarC2: false
+            },
+            computed: {
+                estilo2(){
+                    return {
+                        c2: this.aplicarC2, 
+                        c3: !this.aplicarC2,                         
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

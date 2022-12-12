@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .c1 {
+            background-color: red;
+        }
+        .c2 {
+            background-color: green;
+        }
+        .c3 {
+            background-color: blue;
+        }
+
+        .girar {
+            transform: rotate(45deg);
+        }
+    </style>
+    <!--Como usar o Vue para aplicar classe diretamente dentre das divs-->
+    <div id="app">
+        <div class="caixas">
+            <div class="demo" :class="{c1: aplicarC1, c2: !aplicarC1}" @click="aplicarC1 = !aplicarC1"></div>
+            <div class="demo" :class="[classeCSS, {girar: aplicarGirar}]"></div>
+            <div class="demo" :class="classeCSS"></div>
+        </div>
+        <input type="text" v-model="classeCSS">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarC1: false, 
+                aplicarC2: false,
+                aplicarGirar: true,
+                classeCSS: 'c1'
+            },
+            computed: {
+                estilo2(){
+                    return {
+                        c2: this.aplicarC2, 
+                        c3: !this.aplicarC2,                         
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

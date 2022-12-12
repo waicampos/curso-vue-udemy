@@ -50,3 +50,19 @@ Dados computador são métodos getter que  utilizam cache para armazenar o resul
 Propriedades computadas são chamadas como métodos no HTML e não como funções.
 
 Os dados computadotados são resultado de forma síncrona. Quando alguma dependência reativa é alterada ele retorna um resultado. O __watch__ trabalha de forma assíncrona, quando se deseja monitorar alguma variável e ver algo em respostas a essas alterações.
+
+## Estilos
+
+Para aplicar um class dentro de uma div (ex: class c1), entre chaves coloca-se a classe e se ela vai ser aplicada ou não.
+
+```
+:class="{c1: true}"
+```
+
+Também pode-se adicionar mais testes (ex. aplicando a classe c2):
+
+```
+:class="{c1: aplicarC1, c2: !aplicarC1}"
+```
+
+Essa forma de aplicar estilos pode começar a ficar muito complicada. Para melhorar pode-se utilizar funções computadas.

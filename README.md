@@ -43,5 +43,10 @@ __v-on:__ Você pode usar a diretiva v-on para escutar eventos do DOM e rodar al
 
 ---
 
-- 
-- 
+## Dados computados
+
+Dados computador são métodos getter que  utilizam cache para armazenar o resultado e só são atualizados quando alguma dependência deles é alterada. A diferença para o uso de métodos é que dados computados são cacheados de acordo com suas dependências reativas. Um dado computado somente será reavaliado quando alguma de suas dependências for alterada.
+
+Propriedades computadas são chamadas como métodos no HTML e não como funções.
+
+Os dados computadotados são resultado de forma síncrona. Quando alguma dependência reativa é alterada ele retorna um resultado. O __watch__ trabalha de forma assíncrona, quando se deseja monitorar alguma variável e ver algo em respostas a essas alterações.

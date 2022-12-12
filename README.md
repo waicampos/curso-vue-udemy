@@ -21,7 +21,7 @@ __Flask + VueJS:__ https://www.youtube.com/watch?v=8ULr2J-Ymlo&t=27s
 ## Diretivas
 __Referência:__ https://vuejs.org/api/built-in-directives.html   
 
-__v-bind:__ liga o que está dentro da instância vue com o template. Caminho único, quando atualiza o valor do template não atualiza o valor da vue instance (neste caso ver v-model).   
+__v-bind:__ Sintaxe reduzida __pode-se retirar o v-bind. Ex: :value, :href__:liga o que está dentro da instância vue com o template. Caminho único, quando atualiza o valor do template não atualiza o valor da vue instance (neste caso ver v-model).   
 Exemplo:
 ```html
 <a v-bind:href="link">Googleasdf</a> 
@@ -29,7 +29,7 @@ Exemplo:
 
 __v-model:__ ao contrário do v-bind, o v-model é um caminho de duas vias. Quando o valor da vue instance é atualizado ele atualiza o template (assim como o v-bind). Além disso, caso o template for atualizado ele atualiza também a vue instance.  
 
-__v-once__: ele irá colocar atualizar apenas o valor, depois o valor não será mais alterado mesmo modificando o atributo. Mesmo que título for atualizado na instância Vue, ele não será atualizado aqui. Uma vez que ele resolve o valor, ele não vai mais ficar monitorando esse valor.
+__v-once:__ __ Sintaxe reduzida __@__: ele irá colocar atualizar apenas o valor, depois o valor não será mais alterado mesmo modificando o atributo. Mesmo que título for atualizado na instância Vue, ele não será atualizado aqui. Uma vez que ele resolve o valor, ele não vai mais ficar monitorando esse valor.
 ```
 <p v-once>{{titulo}}</p>
 ```

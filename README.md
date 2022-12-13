@@ -78,3 +78,6 @@ Documentação Oficial - Manipulação de Eventos: https://br.vuejs.org/v2/guide
 Documentação Oficial - Dados Computados & Observadores: https://br.vuejs.org/v2/guide/computed.html
 
 Documentação Oficial - Interligações de Classe e Estilo: https://br.vuejs.org/v2/guide/class-and-style.html
+
+# Condicionais e listas
+As tags condicionandis reitram o código HTML da página e não apenas escondem ele. O v-show ele também esconde o elemento da página porém não o remove da dom.

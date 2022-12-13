@@ -16,7 +16,8 @@ new Vue({
         startGame() {
             this.running = true,
             this.playerLife = 100,
-            this.monsterLife = 100
+            this.monsterLife = 100,
+            this.logs = []
         },
 
         attack(special) {
@@ -41,12 +42,14 @@ new Vue({
 
         healAndHurt() {
             this.heal(10, 15)
-            this.hurt('playerLife', 7, 12, false)
+            this.hurt('playerLife', 7, 12, false, 'Monster', 'Monster', 'monster')
         },
 
         heal(min, max) {
             const heal = this.getRandon(min, max)
             this.playerLife = Math.min(this.playerLife + heal, 100)
+
+            this.registerLog(`Player gained the strength of ${heal}`, 'player')
         },
 
         registerLog(text, cls) {

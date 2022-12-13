@@ -3,7 +3,8 @@ new Vue({
     data: {
         projectName: "Matador de Monstros",
         playerLife: 100,
-        monsterLife: 100
+        monsterLife: 100,
+        running: false
     },
     computed: {
         hasResult() {

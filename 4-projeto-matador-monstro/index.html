@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{projectName}}</title>
+    <title>Matador de Monstros</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -34,7 +34,15 @@
             <div v-if="monsterLife== 0" class="win">Você ganhou!!! :)</div>
             <div v-else class="lose">Você perdeu! :(</div>
         </div>
-        <div class="panel buttons"></div>
+        <div class="panel buttons">
+            <template v-if="running">
+                <button class="btn attack">attack</button>
+                <button class="btn special-attack">special attack</button>
+                <button class="btn heal">heal</button>
+                <button class="btn give-up">give up</button>
+            </template>
+            <button v-else @click="running = true" class="btn new-game">novo jogo</button>
+        </div>
         <div class="panel logs"></div>
     </div>
 

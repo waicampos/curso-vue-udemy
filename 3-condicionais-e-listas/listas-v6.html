@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style:none;
+        }
+
+        h1, p {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>Sem usar o v-for</p>
+        <ul>
+            <li>sem lista vue 1</li>
+            <li>sem lista vue 2</li>
+            <li>sem lista vue 3</li>
+        </ul>
+
+        <p>Sem usar o v-for</p>
+        <ul>
+            <!--Acessando o índice-->
+            <li v-for="(cor, i) in cores" :key="cor">{{cor}} - {{i}}</li>
+        </ul>
+        <button @click="cores.push('branca')">Adicionar</button>
+        <hr>
+        <template v-for="(cor, i) in cores">
+            <h1>{{cor}}</h1>
+            <h1>{{indice}}</h1>
+        </template>
+
+        <hr>
+
+        <ul>
+            <li v-for="(pessoa, i) in pessoas">
+                {{i}} - {{pessoa.nome}}
+                <div v-for="(valor, chave, index) in pessoa">
+                   {{index}} - {{chave}} = {{valor}}
+                </div>
+            </li>
+        </ul>
+
+        <hr>
+
+        <span v-for="n in 10">{{n}}</span>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+                pessoas: [
+                    {nome: 'Ana', idade: 26, peso: 59},
+                    {nome: 'Guilherme', idade: 22, peso: 89}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

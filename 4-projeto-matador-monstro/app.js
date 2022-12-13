@@ -4,7 +4,8 @@ new Vue({
         projectName: "Matador de Monstros",
         playerLife: 100,
         monsterLife: 100,
-        running: false
+        running: false,
+        logs: []
     },
     computed: {
         hasResult() {
@@ -19,14 +20,18 @@ new Vue({
         },
 
         attack(special) {
-            this.hurt('playerLife', 7, 12, false)
-            this.hurt('monsterLife', 5, 10, true)
+            this.hurt('playerLife', 7, 12, false, 'Player', 'Monster', 'player')
+
+            if(this.monsterLife > 0)
+                this.hurt('monsterLife', 5, 10, true, 'Monster', 'Player', 'monster')
         },
 
-        hurt(attribute, min, max, special) {
+        hurt(attribute, min, max, special, source, target, cls) {
             const plus = special ? 5 : 0
             const hurt = this.getRandon(min + plus, max + plus)
             this[attribute] = Math.max(this[attribute] - hurt, 0)
+
+            this.registerLog(`${source} hit ${target} with ${hurt}`, cls)
         },
 
         getRandon(min, max) {
@@ -42,6 +47,10 @@ new Vue({
         heal(min, max) {
             const heal = this.getRandon(min, max)
             this.playerLife = Math.min(this.playerLife + heal, 100)
+        },
+
+        registerLog(text, cls) {
+            this.logs.unshift({text, cls})
         }
     },
     watch: {

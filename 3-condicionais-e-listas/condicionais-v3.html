@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--As tags condicionandis reitram o código HTML da página e não apenas escondem ele.-->
+    <div id="app">
+        <!--Inspecionando o html no browse o código abaixo aparece a div-->
+        <div v-if="logado">
+            <p>Usuário logado: {{nome}}</p>
+            <p>Perfil: Admin</p>
+        </div>
+        <!--Inspecionando o html no browse o código abaixo, que utliza a tag template, não aparece a div. -->
+        <template v-if="logado">
+            <p>Usuário logado: Pedro</p>
+            <p>Perfil: Suporte</p>
+        </template>
+        <p v-else-if="anonimo">Navegando como Anônimo</p>
+        <p v-else>Nenhum usuário logado</p>
+        <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
+        <input type="checkbox" v-model="anonimo">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nome: 'Dyego',
+                logado: false,
+                anonimo: false
+            }
+        });
+    </script>
+</body>
+</html>

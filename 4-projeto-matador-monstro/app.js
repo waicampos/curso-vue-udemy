@@ -1,7 +1,9 @@
 new Vue({
     el:"#app",
     data: {
-        projectName: "Matador de Monstros"
+        projectName: "Matador de Monstros",
+        playerLife: 100,
+        monsterLife: 100
     },
     computed: {
 
@@ -10,6 +12,6 @@ new Vue({
 
     },
     watch: {
-        
+
     }
 });

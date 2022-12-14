@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app1">  
+        <p>{{titulo1}} </p>
+        <button @click="alterar">1</button>
+    </div>
+    <div id="app2">  
+        <p>{{titulo2}}</p>
+        <button @click="alterar">2</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var vm1 = new Vue({
+            el: "#app1",
+            data: {
+                titulo1: "Teste 1"
+            }, methods: {
+                alterar() {
+                    this.titulo1 += "!!!"
+                }
+            }
+        })
+
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                titulo2: "Teste 2"
+            },
+            methods: {
+                alterar() {
+                    this.titulo2 += "???"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -81,3 +81,12 @@ Documentação Oficial - Interligações de Classe e Estilo: https://br.vuejs.or
 
 # Condicionais e listas
 As tags condicionandis reitram o código HTML da página e não apenas escondem ele. O __v-show__ ele também esconde o elemento da página porém não o remove da dom.
+
+# Instalando o Vue CLI e Criando novo Projeto
+
+Na pasta onde será criado:
+
+npm i -g @vue/cli
+vue create nome-projeto 
+cd nome-projeto
+npm run serve

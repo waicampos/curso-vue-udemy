@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <contador1></contador1>
+        <contador1></contador1>
+        <contador1></contador1>
+    </div>
+
+    <hr>
+
+    <div id="app1">
+        <app-contador></app-contador>
+        <app-contador></app-contador>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /*Componente Registrado de forma Global*/
+        // Vue.component('contador', {
+        //     template: 
+        //         `            
+        //         <div>
+        //             <span>{{contador}}</span>
+        //             <button @click="contador++">+</button>
+        //             <button @click="contador--">-</button>
+        //         </div>
+        //         `,
+        //     data: function() {
+        //         return {                
+        //             contador: 0
+        //         }
+        //     }
+        // })
+
+        /*Componente Registrado de forma local*/
+        const contador = {
+            template: 
+                `            
+                <div>
+                    <span>{{contador}}</span>
+                    <button @click="contador++">+</button>
+                    <button @click="contador--">-</button>
+                </div>
+                `,
+            data: function() {
+                return {                
+                    contador: 0
+                }
+            }
+        }
+
+
+
+        const vm = new Vue({
+            el: '#app',
+            components: {
+                contador1: contador
+            }
+        })
+
+        const vm1 = new Vue({
+            el: '#app1',
+            components: {
+                'app-contador': contador
+            }
+        })
+
+    </script>
+</body>
+</html>

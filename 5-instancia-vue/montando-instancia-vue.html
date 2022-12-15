@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            /*Colocando o template dentro da Vue instance*/
+            template: `
+            <div>
+                <h1>{{aula}}</h1>
+                <h2>{{modulo}}</h2>
+                <button @click="alterarAula">Alterar Aula</button>
+                <button @click="alterarModulo">Alterar Módulo</button>            
+            </div>
+            `,
+            data: {
+                aula: 'Aula: Monstando Instância Vue',
+                modulo: 'Módulo: Instância Vue'
+            },
+            methods: {
+                alterarAula(){
+                    this.aula += "#"
+                },
+                alterarModulo(){
+                    this.modulo += "#"
+                }
+            }
+        })
+
+        /*Sem utilizar o el na instência Vue*/
+        //vm.$mount('#app')
+
+        /*montar a instância do Vue sem vincular ela a nenhum outro local. Não pode chamar o mount sem ter um template. Tendo o template o mount monta e gera o el*/
+        vm.$mount()
+        document.querySelector('#app').appendChild(vm.$el)
+
+
+
+    </script>
+</body>
+</html>

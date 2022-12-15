@@ -85,8 +85,10 @@ As tags condicionandis reitram o código HTML da página e não apenas escondem 
 # Instalando o Vue CLI e Criando novo Projeto
 
 Na pasta onde será criado:
-
 npm i -g @vue/cli
 vue create nome-projeto 
 cd nome-projeto
 npm run serve
+
+## Gerando Build de produção
+npm run build

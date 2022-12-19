@@ -7,9 +7,9 @@
         {{ numero }} {{ indice }}
 
         <Citacao>
-            <h1>{{citacoes[indice].fonte}}</h1>
-            <p>{{citacoes[indice].autor}}</p>
-            <h6>{{citacoes[indice].texto}}</h6>
+            <h1 slot="fonte">{{citacoes[indice].fonte}}</h1>
+            <p slot="autor">{{citacoes[indice].autor}}</p>
+            <h6 slot="texto">{{citacoes[indice].texto}}</h6>
         </Citacao>
     </div>
 </template>

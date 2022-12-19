@@ -26,6 +26,14 @@ export default {
 		}
 	},
 	components: {TaskGrid, NewTask, tasksProgress},
+	watch: {
+		tasks: {
+			deep: true,
+			handler() {
+				localStorage.setItem('tasks', JSON.stringify(this.tasks))
+			}
+		}
+	},
 	computed: {
 		progress() {
 			const total = this.tasks.length
@@ -52,6 +60,10 @@ export default {
 		toogleTaskState(i) {
 			this.tasks[i].pending = !this.tasks[i].pending
 		}
+	},created() {
+		const json = localStorage.getItem('tasks')
+		this.tasks = JSON.parse(json) || []
+
 	}
 }
 </script>

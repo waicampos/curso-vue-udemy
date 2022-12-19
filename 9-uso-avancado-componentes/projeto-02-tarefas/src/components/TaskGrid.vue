@@ -11,6 +11,7 @@
 
 <script>
 import Task from "./Task.vue"
+
 export default {
     name: 'TaskGrid',
     components: {Task},

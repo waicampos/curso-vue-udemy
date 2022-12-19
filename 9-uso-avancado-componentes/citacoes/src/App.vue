@@ -1,7 +1,9 @@
 <template>
-	<div id="app">
-		<component :is="componentes[ativo]" />
+	<div id="app">		
 		<button @click="mudar">Mudar</button>
+		<keep-alive>
+			<component :is="componentes[ativo]" />
+		</keep-alive>
 	</div>
 </template>
 

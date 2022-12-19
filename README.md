@@ -95,3 +95,5 @@ npm run build
 
 # Componentes
 Dentro da tag __slot()__ é possível para o componente filho o que foi colocado dentro da tag do componente
+
+Componente dinâmico é sempre destruído e criado quando sai dele. Usando ele dentro da tag __keep-alive__ ele permanece vivo.

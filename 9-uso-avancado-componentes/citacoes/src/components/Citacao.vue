@@ -10,6 +10,14 @@
 export default {
     props: {
         texto: String
+    },
+    created() {
+        // eslint-disable-next-line
+        console.log('Criado')
+    },
+    destroyed() {
+        // eslint-disable-next-line
+        console.log('Destruido')
     }
 }
 </script>

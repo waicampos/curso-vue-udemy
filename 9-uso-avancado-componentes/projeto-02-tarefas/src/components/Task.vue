@@ -1,5 +1,5 @@
 <template>
-  <div id="task" :class="stateClass">
+  <div class="task" :class="stateClass">
     <p>{{task.name}}</p>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
-    #task {
+    .task {
         box-sizing: border-box;
         width: 350px;
         height: 150px;

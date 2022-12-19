@@ -2,7 +2,8 @@
 	<div id="app">
 		<h1>Tarefas</h1>
 		<NewTask @taskAdded="addTask" />
-		<TaskGrid :tasks="tasks"/>
+		<TaskGrid  @taskDeleted="deleteTask"
+		:tasks="tasks"/>
 	</div>
 </template>
 
@@ -13,10 +14,7 @@ import NewTask from "./components/NewTask.vue"
 export default {
 	data() {
 		return{
-			tasks: [
-				{name: 'Lavar a louça', pending: false},
-				{name: 'Comprar blusa', pending: true}
-			]
+			tasks: []
 		}
 	},
 	components: {TaskGrid, NewTask},
@@ -30,10 +28,10 @@ export default {
 					name: task.name, 
 					pending: task.pending || true
 				})
-			}
-
-
-			
+			}			
+		},
+		deleteTask(i) {
+			this.tasks.splice(i, 1)
 		}
 	}
 }

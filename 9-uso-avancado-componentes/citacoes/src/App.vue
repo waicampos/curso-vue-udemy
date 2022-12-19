@@ -1,8 +1,12 @@
 <template>
-	<div id="app">		
-		<button @click="mudar">Mudar</button>
+	<div id="app">	
+		<span>
+			<button @click="componente = 'Citacoes'">Citações</button>
+			<button @click="componente = 'Sobre'">Sobre</button>
+		</span>	
+		
 		<keep-alive>
-			<component :is="componentes[ativo]" />
+			<component :is="componente" />
 		</keep-alive>
 	</div>
 </template>
@@ -15,17 +19,7 @@ export default {
 	components: { Citacoes, Sobre },
 	data() {
 		return{
-			componentes: ['Citacoes', 'Sobre'],
-			ativo: 0
-		}
-	},
-	methods: {
-		mudar() {
-			// eslint-disable-next-line
-			console.log(this.componentes.length)
-			this.ativo = (this.ativo + 1) % this.componentes.length
-			// eslint-disable-next-line
-			console.log(this.ativo)
+			componente: 'Citacoes',
 		}
 	}
 }

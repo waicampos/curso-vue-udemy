@@ -36,6 +36,22 @@ export default {
             }]
         }
     },
+    created() {
+        // eslint-disable-next-line
+        console.log('Criado')
+    },
+    destroyed() {
+        // eslint-disable-next-line
+        console.log('Destruido')
+    },
+    activated() {
+        // eslint-disable-next-line
+        console.log('Ativado')
+    },
+    deactivated() {
+        // eslint-disable-next-line
+        console.log('Desativado')
+    },
     computed: {
         indice() {
             return Math.abs(this.numero % 3)

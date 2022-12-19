@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<Citacoes />
-		<Sobre />
+		<component :is="componentes[ativo]" />
+		<button @click="mudar">Mudar</button>
 	</div>
 </template>
 
@@ -10,7 +10,22 @@ import Citacoes from './components/Citacoes'
 import Sobre from './components/Sobre'
 
 export default {
-	components: { Citacoes, Sobre }
+	components: { Citacoes, Sobre },
+	data() {
+		return{
+			componentes: ['Citacoes', 'Sobre'],
+			ativo: 0
+		}
+	},
+	methods: {
+		mudar() {
+			// eslint-disable-next-line
+			console.log(this.componentes.length)
+			this.ativo = (this.ativo + 1) % this.componentes.length
+			// eslint-disable-next-line
+			console.log(this.ativo)
+		}
+	}
 }
 </script>
 

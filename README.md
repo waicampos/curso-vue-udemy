@@ -92,3 +92,6 @@ npm run serve
 
 ## Gerando Build de produção
 npm run build
+
+# Componentes
+Dentro da tag __slot()__ é possível para o componente filho o que foi colocado dentro da tag do componente

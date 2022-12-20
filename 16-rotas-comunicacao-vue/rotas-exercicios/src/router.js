@@ -39,6 +39,11 @@ export default new Router({
     {
         path: '/redirecionar',
         redirect: '/usuario'
+    },
+    {
+        //Vai redirecionar qualquer rota não existente para a página principal
+        path: '*',
+        redirect: '/'
     }
 ]
 })

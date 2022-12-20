@@ -25,6 +25,7 @@ export default {
   beforeRouteEnter (to, from, next) {
     // eslint-disable-next-line
     console.log("Dentro do Componente -> Usuário detalhe")
+    next()
     // next(vm => {
     //   // eslint-disable-next-line
     //   console.log(vm.id)

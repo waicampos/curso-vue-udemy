@@ -4,8 +4,11 @@
             <router-link tag="li" to="/" active-class="active" exact>
                 <a>Início</a>
             </router-link>
-            <router-link tag="li" to="/usuario/10" active-class="active">
-                <a>Usuário</a>
+            <router-link tag="li" to="/usuario/1" active-class="active">
+                <a>Usuário 1</a>
+            </router-link>
+            <router-link tag="li" to="/usuario/2" active-class="active">
+                <a>Usuário 2</a>
             </router-link>
         </ul>
     </nav>

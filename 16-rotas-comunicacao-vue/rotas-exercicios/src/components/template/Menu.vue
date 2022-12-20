@@ -1,7 +1,13 @@
 <template>
     <nav class="menu">
-        <router-link to="/">Início</router-link>
-        <router-link to="/usuario">Usuário</router-link>
+        <ul>
+            <router-link tag="li" to="/" active-class="active" exact>
+                <a>Início</a>
+            </router-link>
+            <router-link tag="li" to="/usuario" active-class="active">
+                <a>Usuário</a>
+            </router-link>
+        </ul>
     </nav>
 </template>
 

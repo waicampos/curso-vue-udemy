@@ -21,6 +21,19 @@
 <script>
 export default {
   props: ['id'],
+  //Não é possível usar o this da instância vue, dentro da função beforeRouteEnter, porque ela nem foi criada (ex. this.id).
+  beforeRouteEnter (to, from, next) {
+    // eslint-disable-next-line
+    console.log("Dentro do Componente -> Usuário detalhe")
+    // next(vm => {
+    //   // eslint-disable-next-line
+    //   console.log(vm.id)
+    // })
+
+    //Uma utilizade é verificar se o cliente está autenticado para acessar a rota
+    const autenticado = false
+    autenticado ? next() : next(false)
+  }
     // data() {
     //     return {
     //         id: this.$route.params.id

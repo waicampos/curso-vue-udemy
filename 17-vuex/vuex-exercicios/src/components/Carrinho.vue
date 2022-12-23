@@ -22,7 +22,7 @@
             <hr>
             <div class="total">
                 <span>Total: <strong>{{ total | dinheiro }}</strong></span>
-            </div>
+            </div>          
         </div>
     </Painel>
 </template>
@@ -31,8 +31,7 @@
 export default {
     computed: {
         total() {
-            return this.produtos.map(p => p.quantidade * p.preco)
-                .reduce((total, atual) => total + atual, 0)
+            return this.$store.getters.valorTotal
         },
         produtos() {
             return this.$store.state.produtos
